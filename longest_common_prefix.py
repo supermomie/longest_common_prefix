@@ -1,4 +1,6 @@
 class prefix:
+    """
+    here my first attenpt
     def longestCommonPrefix(self, strs):
         prefix = ""
         for i in range(len(strs)):
@@ -7,6 +9,19 @@ class prefix:
             else:
                 break
         return prefix
+    """
+    
+    def longestCommonPrefix(self, strs):
+        prefix = ""
+        for i in zip(*[list(i) for i in strs]):
+            if len(set(i)) == 1:
+                prefix += i[0]
+                #print(prefix)
+            else:
+                break 
+        
+        return prefix
+
 
 
 res = prefix()
